@@ -1,0 +1,10 @@
+# no emacs backup files                     
+*#
+*~
+*#*#
+*.#init
+*.#
+
+# no haskell compile filess
+*.hi
+*.o
