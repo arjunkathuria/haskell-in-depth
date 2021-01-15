@@ -1,4 +1,4 @@
-# no emacs backup files                     
+# no emacs backup files
 *#
 *~
 *#*#
@@ -8,3 +8,4 @@
 # no haskell compile filess
 *.hi
 *.o
+*/dist-newstyle/*
