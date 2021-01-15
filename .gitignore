@@ -9,3 +9,5 @@
 *.hi
 *.o
 */dist-newstyle/*
+
+TAGS
