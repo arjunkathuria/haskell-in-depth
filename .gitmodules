@@ -1,0 +1,3 @@
+[submodule "hid-examples"]
+	path = hid-examples
+	url = https://github.com/bravit/hid-examples.git
