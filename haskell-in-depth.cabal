@@ -9,13 +9,13 @@ version:             0.1.0.0
 description:         The repo for my code follow-throug for the "haskell-in-depth" book.
 -- bug-reports:
 -- license:          
--- license-file:        LICENSE
+license-file:        LICENSE
 author:              Arjun Kathuria
 maintainer:          arjun.kathuria8@gmail.com
 -- copyright:
 -- category:
 tested-with:         GHC == 8.10.3
--- data-files:          data/texts/hamlet.txt
+data-files:          data/texts/hamlet.txt
   
 build-type:          Simple
 extra-source-files:  CHANGELOG.md
@@ -28,44 +28,13 @@ extra-source-files:  CHANGELOG.md
 --   -- hs-source-dirs:
 --   default-language:    Haskell2010
 
-library radar-lib
-  exposed-modules:      Radar
-  hs-source-dirs:       chapter_2/radar
-  build-depends:        base >= 4.14 && <4.15
-  default-language:     Haskell2010
-
--- library expr-simple
---   exposed-modules:     Expr
---   hs-source-dirs:      chapter_2/expr
---   build-depends:
---                        base >=4.14 && <4.15
---                      , text-show >=3.0 && <4
-                     
---   default-language:    Haskell2010
-
--- Excutables : 
--- -----------
-executable vocab1
-  main-is:             vocab.hs
-  hs-source-dirs:      chapter_1
-  build-depends:       base >=4.14 && <4.15,
-                       text >=1.2 && <1.3
-  default-language:    Haskell2010
-
-executable vocab2
-  main-is:             vocab.hs
-  hs-source-dirs:      chapter_1
-  build-depends:       base >=4.14 && <4.15,
-                       text >=1.2 && <1.3
-  default-language:    Haskell2010
-             
 executable vocab3
   main-is:              vocab3.hs
-  hs-source-dirs:       chapter_1
   build-depends:        base >=4.14 && <4.15,
                         text >=1.2 && <1.3,
                         fmt >=0.6 && <0.7
-
+                        
+  hs-source-dirs:       chapter_1
   default-language:     Haskell2010
 
 executable radar
@@ -77,27 +46,12 @@ executable radar
   hs-source-dirs:       chapter_2/radar
   default-language:     Haskell2010
 
-executable person-derived
-  main-is:              derived-show.hs
-  hs-source-dirs:       chapter_2/person
-  other-modules:        Person
-  build-depends:        base >=4.14 && <4.15
+library radar-lib
+  exposed-modules:      Radar
+  hs-source-dirs:       chapter_2/radar
+  build-depends:        base >= 4.14 && <4.15
   default-language:     Haskell2010
-
-executable person-implemented
-  main-is:              implemented-show.hs
-  hs-source-dirs:       chapter_2/person
-  other-modules:        Person
-  build-depends:        base >=4.14 && <4.15
-  default-language:     Haskell2010
-
-executable person-text
-  main-is:              text-show.hs
-  other-modules:        Person
-  hs-source-dirs:       chapter_2/person
-  build-depends:        base >= 4.14 && <4.15,
-                        text-show >=3.0 && <4
-
+          
 test-suite radar-test
   type:                 exitcode-stdio-1.0
   main-is:              radar-test.hs
