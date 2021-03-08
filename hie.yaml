@@ -1,0 +1,21 @@
+cradle:
+  multi:
+    - path: "./hid-examples/"
+      config:
+        cradle:
+          none:
+            
+    - path: "./"
+      config:
+        cradle:
+          cabal:
+            - path: "./chapter_07"
+              component: "exe:rpnexcept"
+
+# cradle:
+#   cabal:
+#     - path: "./chapter_07"
+#       component: "lib:haskell-in-depth"
+
+dependencies:
+  - package.yaml
