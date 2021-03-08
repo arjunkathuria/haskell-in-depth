@@ -35,6 +35,7 @@ executables:
     dependencies:
       - fmt >=0.5 && <0.7
 
+  # Chapter 5
   reader:
     source-dirs: chapter_05
     main: reader.hs
@@ -64,6 +65,33 @@ executables:
     dependencies:
       - mtl >=2.2 && <2.3
       - random
+
+  dice:
+    source-dirs: chapter_05
+    main: dice.hs
+    dependencies:
+      - mtl >=2.2 && <2.3
+      - random
+      
+  ioref:
+    source-dirs: chapter_05
+    main: ioref.hs
+
+  #chapter 6
+  evalrpn1:
+    source-dirs: chapter_06/rpn
+    main: evalrpn1.hs
+    other-modules: [EvalRPN]
+    dependencies:
+      - mtl >=2.2 && <2.3
+
+  rpnexcept:
+    source-dirs: chapter_07/rpn
+    main: EvalRPNExcept.hs
+    dependencies:
+      - mtl >=2.2 && <2.3
+      - text
+      - text-show
       
 internal-libraries:
   radar-lib:
