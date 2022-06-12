@@ -1,40 +1,98 @@
 cabal-version: 2.0
 
--- This file has been generated from package.yaml by hpack version 0.34.4.
+-- This file has been generated from package.yaml by hpack version 0.35.0.
 --
 -- see: https://github.com/sol/hpack
 
 name:           haskell-in-depth
 version:        1.0
+synopsis:       The source repo for my follow along code from the book Haskell in Depth
+description:    The source repo where i put all the code from examples taught in the book "Haskell in depth" by Vitaly Bragilevsky. There are no exercises in the book, and thus the code here is from the examples that were interesting enough for me to Follow along and code through. The topic were varied and kept my interest.
 author:         Arjun Kathuria
 maintainer:     Arjun Kathuria
 build-type:     Simple
 tested-with:
-    GHC == 8.10.3, GHC == 8.10.4
+    GHC == 8.10.3, GHC == 8.10.4, GHC == 9.2.3
 extra-source-files:
     package.yaml
+
+library ch10
+  exposed-modules:
+      Ch10
+  other-modules:
+      Factorial
+  hs-source-dirs:
+      chapter_10
+  ghc-options: -rtsopts -threaded "-with-rtsopts=-N -qg"
+  build-depends:
+      base >=4.14 && <5
+  default-language: Haskell2010
 
 library radar-lib
   exposed-modules:
       Radar
   hs-source-dirs:
       chapter_02/radar
+  ghc-options: -rtsopts -threaded "-with-rtsopts=-N -qg"
   build-depends:
-      base ==4.14.*
+      base >=4.14 && <5
+  default-language: Haskell2010
+
+executable dice
+  main-is: dice.hs
+  other-modules:
+      Paths_haskell_in_depth
+  autogen-modules:
+      Paths_haskell_in_depth
+  hs-source-dirs:
+      chapter_05
+  ghc-options: -rtsopts -threaded "-with-rtsopts=-N -qg"
+  build-depends:
+      base >=4.14 && <5
+    , mtl ==2.2.*
+    , random
+  default-language: Haskell2010
+
+executable evalrpn1
+  main-is: evalrpn1.hs
+  other-modules:
+      EvalRPN
+  hs-source-dirs:
+      chapter_06/rpn
+  ghc-options: -rtsopts -threaded "-with-rtsopts=-N -qg"
+  build-depends:
+      base >=4.14 && <5
+    , mtl ==2.2.*
   default-language: Haskell2010
 
 executable genSQL
   main-is: genSQL.hs
   other-modules:
       Paths_haskell_in_depth
+  autogen-modules:
+      Paths_haskell_in_depth
   hs-source-dirs:
       chapter_05
   other-extensions:
       ViewPatterns
+  ghc-options: -rtsopts -threaded "-with-rtsopts=-N -qg"
   build-depends:
-      base ==4.14.*
+      base >=4.14 && <5
     , mtl ==2.2.*
     , text ==1.2.*
+  default-language: Haskell2010
+
+executable ioref
+  main-is: ioref.hs
+  other-modules:
+      Paths_haskell_in_depth
+  autogen-modules:
+      Paths_haskell_in_depth
+  hs-source-dirs:
+      chapter_05
+  ghc-options: -rtsopts -threaded "-with-rtsopts=-N -qg"
+  build-depends:
+      base >=4.14 && <5
   default-language: Haskell2010
 
 executable radar
@@ -45,8 +103,9 @@ executable radar
       chapter_02/radar
   other-extensions:
       DeriveAnyClass
+  ghc-options: -rtsopts -threaded "-with-rtsopts=-N -qg"
   build-depends:
-      base ==4.14.*
+      base >=4.14 && <5
     , fmt >=0.5 && <0.7
   default-language: Haskell2010
 
@@ -54,23 +113,45 @@ executable reader
   main-is: reader.hs
   other-modules:
       Paths_haskell_in_depth
+  autogen-modules:
+      Paths_haskell_in_depth
   hs-source-dirs:
       chapter_05
   other-extensions:
       NamedFieldPuns
+  ghc-options: -rtsopts -threaded "-with-rtsopts=-N -qg"
   build-depends:
-      base ==4.14.*
+      base >=4.14 && <5
     , mtl ==2.2.*
+  default-language: Haskell2010
+
+executable rpnexcept
+  main-is: EvalRPNExcept.hs
+  other-modules:
+      Paths_haskell_in_depth
+  autogen-modules:
+      Paths_haskell_in_depth
+  hs-source-dirs:
+      chapter_07/rpn
+  ghc-options: -rtsopts -threaded "-with-rtsopts=-N -qg"
+  build-depends:
+      base >=4.14 && <5
+    , mtl ==2.2.*
+    , text
+    , text-show
   default-language: Haskell2010
 
 executable sumList
   main-is: sumList.hs
   other-modules:
       Paths_haskell_in_depth
+  autogen-modules:
+      Paths_haskell_in_depth
   hs-source-dirs:
       chapter_05
+  ghc-options: -rtsopts -threaded "-with-rtsopts=-N -qg"
   build-depends:
-      base ==4.14.*
+      base >=4.14 && <5
     , mtl ==2.2.*
   default-language: Haskell2010
 
@@ -78,10 +159,13 @@ executable vocab1
   main-is: vocab.hs
   other-modules:
       Paths_haskell_in_depth
+  autogen-modules:
+      Paths_haskell_in_depth
   hs-source-dirs:
       chapter_01
+  ghc-options: -rtsopts -threaded "-with-rtsopts=-N -qg"
   build-depends:
-      base ==4.14.*
+      base >=4.14 && <5
     , text ==1.2.*
   default-language: Haskell2010
 
@@ -89,10 +173,13 @@ executable vocab2
   main-is: vocab2.hs
   other-modules:
       Paths_haskell_in_depth
+  autogen-modules:
+      Paths_haskell_in_depth
   hs-source-dirs:
       chapter_01
+  ghc-options: -rtsopts -threaded "-with-rtsopts=-N -qg"
   build-depends:
-      base ==4.14.*
+      base >=4.14 && <5
     , text ==1.2.*
   default-language: Haskell2010
 
@@ -100,10 +187,13 @@ executable vocab3
   main-is: vocab3.hs
   other-modules:
       Paths_haskell_in_depth
+  autogen-modules:
+      Paths_haskell_in_depth
   hs-source-dirs:
       chapter_01
+  ghc-options: -rtsopts -threaded "-with-rtsopts=-N -qg"
   build-depends:
-      base ==4.14.*
+      base >=4.14 && <5
     , fmt ==0.6.*
     , text ==1.2.*
   default-language: Haskell2010
@@ -112,10 +202,27 @@ executable weapons
   main-is: weapons.hs
   other-modules:
       Paths_haskell_in_depth
+  autogen-modules:
+      Paths_haskell_in_depth
   hs-source-dirs:
       chapter_05
+  ghc-options: -rtsopts -threaded "-with-rtsopts=-N -qg"
   build-depends:
-      base ==4.14.*
+      base >=4.14 && <5
     , mtl ==2.2.*
     , random
+  default-language: Haskell2010
+
+benchmark factorial-bench
+  type: exitcode-stdio-1.0
+  main-is: benchmarks/fact-bench.hs
+  other-modules:
+      Paths_haskell_in_depth
+  autogen-modules:
+      Paths_haskell_in_depth
+  ghc-options: -rtsopts -threaded "-with-rtsopts=-N -qg"
+  build-depends:
+      base >=4.14 && <5
+    , ch10
+    , criterion
   default-language: Haskell2010
